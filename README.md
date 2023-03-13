@@ -1,3 +1,0 @@
-# Electriqe
-
-Coming soon
