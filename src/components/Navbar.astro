@@ -44,7 +44,7 @@ const navbarItems = [
   >
     Beta Access
   </a>
-  <button class="lg:hidden p-2 rounded-md text-xl">
+  <button id="toggle" class="lg:hidden p-2 rounded-md text-xl">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6"
@@ -60,3 +60,26 @@ const navbarItems = [
     </svg>
   </button>
 </header>
+<div
+  id="menu"
+  class="md:hidden z-50 p-8 items-start text-left transition-all delay-100 duration-100"
+>
+  <div class="flex flex-col bg-div-bg p-4 gap-2">
+    {
+      navbarItems.map(({ name, uri }) => (
+        <a
+          class="text-xl font-semibold cursor-pointer hover:text-gray-300 transition-colors"
+          href={uri}
+        >
+          {name}
+        </a>
+      ))
+    }
+    <a
+      href="https://dash.neobrains.me"
+      class="p-4 font-semibold rounded-md text-xl bg-div-bg hover:bg-hover-div-bg"
+    >
+      Beta Access
+    </a>
+  </div>
+</div>
