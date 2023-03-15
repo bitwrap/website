@@ -1,0 +1,62 @@
+---
+const navbarItems = [
+  {
+    name: "Dashboard",
+    uri: "https://dash.neobrains.me",
+  },
+  {
+    name: "Discord",
+    uri: "https://discord.gg/xEEpJvE9py",
+  },
+  {
+    name: "GitHub",
+    uri: "https://github.com/bitwrap",
+  },
+];
+---
+
+<header
+  class="w-full top-0 md:h-max p-8 md:px-32 md:pt-8 flex justify-between items-center z-40 sticky backdrop-blur-sm text-gray-50 overflow-hidden"
+>
+  <div class="flex items-center gap-2">
+    <img
+      src="./icon-rounded.png"
+      class="h-8 w-8 md:w-10 md:h-10 rounded-full"
+      alt="bitwrap-logo"
+    />
+    <span class="text-3xl font-bold tracking-wider">Bitwrap</span>
+  </div>
+  <div class="hidden lg:flex items-center gap-4">
+    {
+      navbarItems.map(({ name, uri }) => (
+        <a
+          class="text-xl font-semibold cursor-pointer hover:text-gray-300 transition-colors"
+          href={uri}
+        >
+          {name}
+        </a>
+      ))
+    }
+  </div>
+  <a
+    href="https://dash.neobrains.me"
+    class="hidden lg:block p-4 font-semibold rounded-md text-xl bg-div-bg hover:bg-hover-div-bg"
+  >
+    Beta Access
+  </a>
+  <button class="lg:hidden p-2 rounded-md text-xl">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>

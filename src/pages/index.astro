@@ -1,10 +1,106 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    icon: "code",
+    title: "Effortless Code Deployment",
+    description:
+      "Bitwrap's automated deployment tools make it easy to deploy your code to the cloud with just a few clicks. Save time and effort, and work in the language you're most comfortable with.",
+  },
+  {
+    icon: "github",
+    title: "Simplified GitHub Management",
+    description:
+      "Bitwrap's seamless integration with GitHub allows you to manage all your repositories in one centralized location, streamlining your development workflow and eliminating language barriers.",
+  },
+  {
+    icon: "tool",
+    title: "Complete DevOps Experience",
+    description:
+      "With cloud storage and custom subdomains on the horizon, Bitwrap will provide a complete DevOps experience. Develop, deploy, and manage your code all in one platform, and stay focused on what matters most - your code. Coming Soon.",
+  },
+];
 ---
 
 <Layout title="Bitwrap">
-  <main class="w-screen h-screen items-center flex flex-col justify-center">
-    <img class="w-32 h-32" src="./icon-rounded.png" alt="Bitwrap Logo" />
-    <h1 class="text-4xl font-bold">Bitwrap</h1>
-  </main>
+  <Navbar />
+  <div
+    class="flex flex-col lg:flex-row p-8 md:px-32 md:pt-10 w-full items-start lg:items-center justify-between overflow-hidden gap-4"
+  >
+    <div class="lg:w-1/2 flex flex-col text-left gap-4">
+      <span class="text-3xl w-full lg:text-5xl font-bold text-left lg:max-w-lg"
+        >Seamlessly Deploy Your Code with Bitwrap</span
+      >
+      <span class="text-gray-200 text-xl lg:max-w-xl font-lato">
+        Bitwrap is an all-in-one solution for seamless integration between
+        GitHub and your code. With automatic cloud deployment and much more in
+        future, leave the hassles of deployment to us and focus on what you do
+        the best - developing!
+      </span>
+      <span class="text-gray-300 text-lg lg:max-w-xl font-lato"
+        >Currently in beta</span
+      >
+    </div>
+    <div class="lg:w-1/2">
+      <img
+        src="./deploy.png"
+        class="rounded-3xl w-full h-full shadow-2xl transition-all hover:scale-105 duration-150 delay-150"
+        alt="deploy"
+      />
+    </div>
+  </div>
+  <div class="p-8 md:px-32 md:pt-20 text-4xl font-semibold overflow-hidden">
+    <span>What We Provide</span>
+  </div>
+  <div
+    class="p-8 md:px-32 overflow-x-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full overflow-hidden"
+  >
+    {
+      features.map((feature) => (
+        <div class="flex flex-col items-start text-left gap-4 p-8 bg-div-bg rounded-lg hover:bg-hover-div-bg transition-all">
+          <div class="flex flex-col items-start font-bold gap-4 ">
+            <div class="">
+              <Icon name={feature.icon} class="w-8 h-8" />
+            </div>
+            <span class="text-2xl font-bold">{feature.title}</span>
+          </div>
+          <span class="text-gray-200 text-lg font-lato">
+            {feature.description}
+          </span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="flex flex-col gap-4 p-8 md:px-32 overflow-x-hidden">
+    <span class="font-semibold text-4xl">Interested ?</span>
+    <div class="text-grat-200 text-xl font-lato flex flex-col gap-2">
+      <span>
+        We're currently in beta, and only accepting a limited number of users.
+        Join our Discord server to get notified when we're ready to launch.
+      </span>
+      <span>You can also contact us via mail.</span>
+    </div>
+
+    <div class="flex gap-2 w-full items-start text-left">
+      <a
+        href="https://discord.gg/xEEpJvE9py"
+        class="w-32 text-left bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+        >Join Discord</a
+      >
+      <a
+        href="mailto:admin@neobrains.me"
+        class="w-32 text-left bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg"
+        >Contact Us</a
+      >
+    </div>
+  </div>
+
+  <footer class="p-8 md:px-32 overflow-x-hidden">
+    <span class="text-gray-200 text-lg font-lato">
+      © 2023 Neobrains. All rights reserved.
+    </span>
+  </footer>
 </Layout>
