@@ -134,7 +134,7 @@ const team = (await fetchTeamData()) || [];
   >
     {
       team.map((member) => (
-        <div class="flex items-start text-left gap-4 p-8 bg-div-bg rounded-lg hover:bg-hover-div-bg transition-all">
+        <div class="flex items-start text-left gap-4 p-4 bg-div-bg rounded-lg hover:bg-hover-div-bg transition-all">
           <img
             class="w-16 h-16 rounded-full"
             src={member.avatar}
