@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://bitwrap.neobrains.me',
+  site: 'https://bitwrap.cloud',
   integrations: [tailwind(), compress(), sitemap()]
 });
